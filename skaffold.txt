@@ -1,0 +1,25 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+build:
+  artifacts:
+  - image: java-hello-world
+    context: .
+    jib:
+      project: hello-world
+    sync:
+      auto: true
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/deployment.yaml
+    - kubernetes/service.yaml
+profiles:
+- name: dockerfile
+  build:
+    artifacts:
+    - image: java-hello-world
+      context: .
+      docker:
+        dockerfile: Dockerfile
+    tagPolicy:
+      sha256: {}

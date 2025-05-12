@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 800px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 th:text="${greeting}">Hello World!</h1>
+            <p>Welcome to the Google Cloud Artifact Registry demo application</p>
+        </div>
+        
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Status:</h4>
+            <p th:text="${status}">It's updated!</p>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                Project Information
+            </div>
+            <div class="card-body">
+                <p class="card-text">Project ID: <span th:text="${project}">Unknown Project</span></p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Demo application for working with Google Cloud Artifact Registry</p>
+        </div>
+    </div>
+</body>
+</html>
